@@ -49,7 +49,6 @@ possible_ways_values: list[int] = [0 for _ in possible_ways_processed]
 
 for way_i, possible_way in enumerate(possible_ways_processed):
     for i, j in enumerate(possible_way):
-        value = 1 if forest[i][j] == '+' else 0
-        possible_ways_values[way_i] += value
+        possible_ways_values[way_i] += 1 if forest[i][j] == '+' else 0
 
 print(max(possible_ways_values or [0]))
